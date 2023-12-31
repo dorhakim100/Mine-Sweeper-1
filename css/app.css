@@ -1,0 +1,290 @@
+.screen{
+    background-image: url('youtube-video-gif.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@font-face {
+    font-family: myFont;
+    src: url('FaqroExtended-Regular.ttf');
+}
+h1{
+    text-align: center;
+    font-family: myFont;
+    font-size: 80px;
+    color: rgb(212, 188, 255);
+    text-shadow: rgb(23, 0, 27) 1px 0 100px;
+    text-shadow: 3px 3px 2px rgb(255, 0, 0);
+}
+
+.lives-count{
+text-align: center;
+margin: auto;
+width: 50%;
+padding: 10px;
+font-size: 50px;
+}
+
+.lives-count img{
+    height: 50px;
+}
+.hint{
+    background-color: aqua;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    float: left;
+    margin: auto;
+    border: 3px solid rgb(147, 66, 223);
+    border-radius: 50px;
+    padding: 10px;
+    text-align: center;
+    background-color: aqua;
+    box-shadow: rgb(255, 0, 0) 1px 0 100px;
+    transition: 0.3s;
+}
+.hint img{
+    height: 50px;
+}
+.hint:hover{
+    cursor: pointer;
+    -webkit-box-shadow:0px 0px 105px 45px rgba(45,255,196,0.9);
+-moz-box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
+box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
+}
+
+
+.modal-content h2{
+    text-align: center;
+    font-family: myFont;
+    font-size: 50px;
+    color: rgb(212, 188, 255);
+    text-shadow: rgb(23, 0, 27) 1px 0 100px;
+    text-shadow: 3px 3px 2px rgb(255, 0, 0);
+
+}
+
+.modal-content h3{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(212, 188, 255);
+    text-shadow: rgb(23, 0, 27) 1px 0 100px;
+    text-shadow: 3px 3px 2px rgb(255, 0, 0);
+}
+
+
+.stopwatch{
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    color: rgb(180, 139, 255);
+    text-shadow: rgb(44, 0, 52) 1px 0 100px;
+    text-shadow: 3px 3px 2px rgb(255, 0, 0);
+    font-size: 30px;
+    border: solid;
+    /* margin-left: 820px;
+    margin-right: 250px; */
+    margin-bottom: 20px;
+    border-radius: 5px;
+    width: 400px;
+    margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+/* h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    color: rgb(180, 139, 255);
+    text-shadow: rgb(44, 0, 52) 1px 0 100px;
+    text-shadow: 3px 3px 2px rgb(255, 0, 0);
+    text-align: center;
+    font-size: 40px;
+    border: solid;
+} */
+
+.size-btn-box{
+    margin: auto;
+    width: 50%;
+    border: 3px solid rgb(147, 66, 223);
+    border-radius: 50px;
+    padding: 10px;
+    text-align: center;
+    background-color: aqua;
+    box-shadow: rgb(255, 0, 0) 1px 0 100px;
+    transition: 0.3s;
+}
+
+.size-btn-box:hover{
+    -webkit-box-shadow:0px 0px 105px 45px rgba(45,255,196,0.9);
+    -moz-box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
+    box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
+    background-color: rgb(98, 0, 255);
+    
+}
+
+.btn{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(147, 66, 223);
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.btn:hover{
+    cursor: pointer;
+    font-weight:bold;
+    color: rgb(0, 0, 0);
+    background-color: rgb(168, 249, 255);
+    outline-style: solid;
+    outline-color: crimson;
+}
+
+.resatart-box{
+    text-align: center;
+    margin: 1rem;
+    padding: 2rem 2rem;
+    text-align: center;
+    
+}
+
+.restart-btn{
+    background-image: url('smile.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150px;
+    width: 120px;
+    font-size: 50px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    /* display: inline-block; */
+    /* padding: 1rem 1rem; */
+    /* vertical-align: middle; */
+    
+}
+
+.lives-count{
+    
+}
+
+.restart-btn:hover{
+    cursor: pointer;
+    background-image: url('restart.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150px;
+    width: 120px;
+}
+
+.board{
+    text-align: center;
+}
+
+table{
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid black;
+    margin: 40px auto;
+}
+
+td  {
+    font-family: monospace;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(197, 172, 205);
+    text-align: center;
+    border: 3px solid white;
+    color: darkslategray;
+    transition: 400ms;
+}
+
+td:hover {
+    cursor: pointer;
+    font-weight:bold;
+    color: rgb(0, 0, 0);
+    background-color: rgb(168, 249, 255);
+    outline-style: solid;
+    outline-width: medium;
+    outline-color: crimson;
+}
+
+.hide{
+    opacity: 0;
+}
+
+.marked{
+    background-color: rgb(40, 40, 40);
+    background-image: url('flag.png');
+    background-position: center;
+    background-size: 50px 40px;
+    background-repeat: no-repeat;
+}
+
+.marked:hover{
+    background-color: rgb(29, 29, 29);
+    
+}
+
+
+.modal{
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    text-align: center;
+    border-radius: 20px;
+}
+
+.again-btn{
+    background-color: blueviolet;
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+    height: 75px;
+    width: 150px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.again-btn:hover{
+    cursor: pointer;
+    font-weight:bold;
+    color: rgb(0, 0, 0);
+    /* background-color: rgb(168, 249, 255); */
+    outline-style: solid;
+    outline-color: crimson;
+    -webkit-box-shadow:0px 0px 105px 45px rgba(45,255,196,0.9);
+    -moz-box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
+    box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
+}
+
+h4{
+    text-align: center;
+    font-family: myFont;
+    font-size: 70px;
+    color: rgb(212, 188, 255);
+    text-shadow: rgb(23, 0, 27) 1px 0 100px;
+    text-shadow: 3px 3px 2px rgb(255, 0, 0);
+}

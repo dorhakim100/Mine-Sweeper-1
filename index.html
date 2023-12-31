@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mine Sweeper</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body class="screen" onload="init()">
+    <h1>Mine<br />
+        Sweeper</h1>
+    <div class="modal">
+        <div class="modal-content">
+            <!-- <h1>Game Over</h1>
+                <h2>You've won!</h2>
+                <h3>Time: 00:00:00</h3>
+                <button>Play again</button> -->
+            </div>
+        </div>
+        <div class="stopwatch">00:00:00</div>
+        <div class="pad">
+
+            <div class="resatart-box">
+                <div class="lives-count"></div>
+                <button class="hint" onclick="onHintClick()"><img src="js/lamp.png"></img><img src="js/lamp.png"></img><img src="js/lamp.png"></img></button>
+                <button class="restart-btn" onclick="onPlayAgain()"></button>
+            </div>
+        </div>
+        <div class="size-btn-box">
+            
+            <button class="btn" onclick="chooseBoardSize(this)">4X4</button>
+            <div class="time-four">Best time:</div>
+            <button class="btn" onclick="chooseBoardSize(this)">8X8</button>
+            <div class="time-eigth"><p>Best time:</p></div>
+            <button class="btn" onclick="chooseBoardSize(this)">12X12</button>
+            <div class="time-twelve"><p>Best time:</p></div>
+
+        </div>
+        <div class="board">
+            
+        </div>
+        <h4>Dor Hakim</h4>
+    <script src="js/utils.js"></script>
+    <script src="js/MineSweeper.js"></script>
+</body>
+
+</html>
