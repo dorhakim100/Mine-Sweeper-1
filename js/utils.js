@@ -53,23 +53,36 @@ function createMat(size = 8) {
 }
 
 // Get random empty cell (board)
-function getEmptyCell(board) {
+function getEmptyCells(board) {
   const emptyCells = []
   for (var i = 0; i < board.length; i++) {
     for (var j = 0; j < board[0].length; j++) {
       const currCell = board[i][j]
-      if (board[i][j].content !== MINE) {
+      if (board[i][j].content === EMPTY) {
         emptyCells.push({ i, j })
-        // board[i][j].content = MINE
+      }
+    }
+  }
+  if (!emptyCells.length) return null
+  return emptyCells
+}
+function getEmptySafeCell(board) {
+  const emptyCells = []
+  for (var i = 0; i < board.length; i++) {
+    for (var j = 0; j < board[0].length; j++) {
+      const currCell = board[i][j]
+      if (board[i][j].content !== MINE && board[i][j].isShown === false) {
+        emptyCells.push({ i, j })
       }
     }
   }
   if (!emptyCells.length) return null
   const randomIdx = getRandomIntInclusive(0, emptyCells.length - 1)
-  return emptyCells[randomIdx]
+  const emptyCell = emptyCells[randomIdx]
+  emptyCells.splice(randomIdx, 1)
+  return emptyCell
 }
 
-//  Count neighbors (specific cell)
 function countNeighborsMines(rowIdx, colIdx, mat) {
   var minesAround = 0
   for (var i = rowIdx - 1; i <= rowIdx + 1; i++) {
@@ -78,7 +91,6 @@ function countNeighborsMines(rowIdx, colIdx, mat) {
     for (var j = colIdx - 1; j <= colIdx + 1; j++) {
       if (j < 0 || j >= mat[i].length) continue
       if (i === rowIdx && j === colIdx) continue
-      // console.log('mat[i][j].content:', mat[i][j].content)
       if (mat[i][j].content === MINE) minesAround++
     }
   }
@@ -91,11 +103,24 @@ function expandShown(board, rowIdx, colIdx) {
     for (var j = colIdx - 1; j <= colIdx + 1; j++) {
       if (j < 0 || j >= board[rowIdx].length) continue
       if (i === rowIdx && j === colIdx) continue
+      if (board[i][j].content === MINE) continue
+      if (
+        (i === rowIdx - 1 && j === colIdx - 1) ||
+        (i === rowIdx + 1 && j === colIdx + 1) ||
+        (i === rowIdx + 1 && j === colIdx - 1) ||
+        (i === rowIdx - 1 && j === colIdx + 1)
+      )
+        continue
+      if (board[i][j].isShown === true) continue
       var currElCell = document.querySelector(`.cell-${i}-${j}`)
-      if (board[i][j].content !== MINE && !currElCell.innerText) {
-        currElCell.innerText = countNeighborsMines(i, j, gBoard)
-        board[i][j].isShown = true
-        gGame.shownCount++
+      board[i][j].content = countNeighborsMines(i, j, board)
+      currElCell.classList.add('shown')
+      board[i][j].isShown = true
+      if (board[i][j].content !== 0) {
+        currElCell.innerText = board[i][j].content
+        continue
+      } else if (board[i][j].content === 0) {
+        expandShown(board, i, j)
       }
     }
   }
@@ -112,14 +137,9 @@ function expend(rowIdx, colIdx, mat) {
       const elTd = document.querySelector(`.cell-${i}-${j}`)
       console.log('elTd:', elTd)
       console.log('elTd.innerText:', elTd.innerText)
-      // expend(i, j, gBoard)
       if (mat[i][j].content !== MINE) {
         onCellClicked(elTd, i, j)
       }
-      // if (elTd.innerText !== MINE) {
-      // } else if (elTd.innerText !== MINE) {
-      //   return
-      // }
     }
   }
   return gNeighborsCount

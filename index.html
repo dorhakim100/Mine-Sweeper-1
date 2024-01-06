@@ -20,25 +20,34 @@
                 <button>Play again</button> -->
             </div>
         </div>
-        <div class="stopwatch">00:00:00</div>
-        <div class="pad">
-
-            <div class="resatart-box">
-                <div class="lives-count"></div>
-                <button class="hint" onclick="onHintClick()"><img src="js/lamp.png"></img><img src="js/lamp.png"></img><img src="js/lamp.png"></img></button>
-                <button class="restart-btn" onclick="onPlayAgain()"></button>
-            </div>
-        </div>
+        <div class="settings-box"><div class="manual-box" onclick="toManualMode(this)"><button class="manual-btn">Switch to manually mode</button></div><button class="dark-mode" onclick="onDarkModeClick(this)">Switch to Dark mode</button></div>
         <div class="size-btn-box">
             
             <button class="btn" onclick="chooseBoardSize(this)">4X4</button>
             <div class="time-four">Best time:</div>
             <button class="btn" onclick="chooseBoardSize(this)">8X8</button>
-            <div class="time-eigth"><p>Best time:</p></div>
+            <div class="time-eight"><p>Best time:</p></div>
             <button class="btn" onclick="chooseBoardSize(this)">12X12</button>
             <div class="time-twelve"><p>Best time:</p></div>
-
+            <div class="manual-remains"></div>
         </div>
+      
+        <div class="pad">
+            
+            <div class="resatart-box">
+                <div class="lives-count"></div>
+                <button class="hint" onclick="onHintClick()"><img src="js/lamp.png"></img><img src="js/lamp.png"></img><img src="js/lamp.png"></img></button>
+                <button class="restart-btn" onclick="onPlayAgain()" onmouseenter="replaceAlienToCuriosity()" onmouseleave="replaceAlienToSmiley()"></button>
+                <div class="btn-box">
+                    
+                    <button class="safe" onclick="onSafeClick()">Safe click: 3</button>
+                    <button class="mega" onclick="onMegaHint(this)">MEGA HINT</button>
+                    <button class="exterminator" onclick="mineExterminator(this)">Exterminator</button>
+                    <button class="undo" onclick="onUndoClick()">UNDO</button>
+                </div>
+            </div>
+        </div>
+        <div class="stopwatch">00:00:00</div>
         <div class="board">
             
         </div>
